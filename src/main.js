@@ -8,7 +8,7 @@ async function cargarVista () {
   // Inyectamos la vista home
   document.querySelector('main').innerHTML = vista.template
 }
-cargarVista()
+cargarVista() 
 
 //Inyectamos el componente header
 document.querySelector('header').innerHTML = header.template
