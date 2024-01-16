@@ -1,3 +1,7 @@
 export const footer = {
-    template: `footer`
-}
+    template: `Código html del componente`,
+    string: ()=>{
+      //logica javascript para el componente
+    } 
+  }
+  
