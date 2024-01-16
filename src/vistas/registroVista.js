@@ -1,4 +1,4 @@
-export const homeVista = {
+export const registroVista = {
     template: `Código html del componente`,
     string: ()=>{
       //logica javascript para el componente
