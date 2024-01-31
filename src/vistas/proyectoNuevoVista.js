@@ -122,7 +122,7 @@ export default {
           enviaDatos()
         }
       })
-  
+   
       // Función para enviar datos a la base de datos
       function enviaDatos () {
         const proyectoEditado = {

@@ -48,7 +48,7 @@ export default {
     // Simulamos la consulta a un proyecto por id filtrando de todos nuestros proyectos de prueba el que tiene el id que hemos recibido como parámetro
     const proyectoArray = proyectos.filter(p => p.id == id)
     const proyecto = proyectoArray[0]
-
+ 
     // Modificamos el formato de la fecha quedandonos solo con el yy-mm-dd
     const fecha = proyecto.created_at
     const fechaCorta = fecha.split('T')[0]
