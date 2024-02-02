@@ -1,3 +1,14 @@
+console.log("PRUEBAS SUPABASE")
+
+import { createClient } from '@supabase/supabase-js'
+
+const supabaseUrl = 'https://llhbmtojtjtbiptzizts.supabase.co'
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxsaGJtdG9qdGp0YmlwdHppenRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDY4MjYxMDYsImV4cCI6MjAyMjQwMjEwNn0.DEV4kjtJ1SFMgnR1ewYJITILzlk65q29oVdAu9lRBrw'
+const supabase = createClient(supabaseUrl, supabaseKey)
+
+// Mostramos por consola la conexión establecida
+console.log('conexión', supabase)
+
 //Probamos la api de las tablas
 //función para Leer perfiles
 const leerPerfiles = async ()=>{
@@ -68,18 +79,3 @@ const proyectoDetalleTodos = async ()=>{
 
 }
 await proyectoDetalleTodos()
-
-
-
-console.log("PRUEBAS SUPABASE")
-
-import { createClient } from '@supabase/supabase-js'
-
-const supabaseUrl = 'https://llhbmtojtjtbiptzizts.supabase.co'
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxsaGJtdG9qdGp0YmlwdHppenRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDY4MjYxMDYsImV4cCI6MjAyMjQwMjEwNn0.DEV4kjtJ1SFMgnR1ewYJITILzlk65q29oVdAu9lRBrw'
-const supabase = createClient(supabaseUrl, supabaseKey)
-
-// Mostramos por consola la conexión establecida
-console.log('conexión', supabase)
-
-
