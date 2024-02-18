@@ -1,17 +1,16 @@
-// Importamos la conexión a la base de datos desde './supabase.js'
 import { supabase } from './supabase.js'
 
 // Definición de la clase User
 export class User {
   // Constructor que asigna propiedades básicas de un usuario
-  constructor(id = null, email = null, password = null) {
+  constructor (id = null, email = null, password = null) {
     this.id = id
     this.email = email
     this.password = password
   }
 
   // Método estático para crear un nuevo usuario (registro)
-  static async create(userData) {
+  static async create (userData) {
     // Registra un nuevo usuario con Supabase
     const { data, error } = await supabase.auth.signUp(userData)
 
@@ -26,7 +25,7 @@ export class User {
   }
 
   // Método estático para iniciar sesión (recibe un objeto con email y password)
-  static async login(userData) {
+  static async login (userData) {
     // Inicia sesión con Supabase
     const { data, error } = await supabase.auth.signInWithPassword(userData)
 
@@ -40,7 +39,7 @@ export class User {
   }
 
   // Método estático para cerrar sesión
-  static async logout() {
+  static async logout () {
     // Cierra sesión con Supabase
     const { error } = await supabase.auth.signOut()
 
@@ -54,7 +53,7 @@ export class User {
   }
 
   // Método estático para obtener el usuario actualmente logueado
-  static async getUser() {
+  static async getUser () {
     // Obtiene la información del usuario actualmente logueado con Supabase
     const { data: { user } } = await supabase.auth.getUser()
 
@@ -63,8 +62,8 @@ export class User {
   }
 
   // Método para actualizar datos del usuario (no está claro cómo se utiliza actualmente)
-  async update(nuevosDatos) {
-    const { data, error } = await supabase.auth.updateUser({
+  async update () {
+    const { error } = await supabase.auth.updateUser({
       email: this.email,
       password: this.password
     })
