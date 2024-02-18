@@ -1,4 +1,4 @@
-/// Gestión del localstorage
+// Gestión del localstorage
 export const ls = {
   // Captuar datos de localStorage
   getUsuario: () => {

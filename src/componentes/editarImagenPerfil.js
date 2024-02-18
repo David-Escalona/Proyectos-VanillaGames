@@ -71,6 +71,7 @@ export const editarImagenPerfil = {
     </form>
   </div>
   `,
+  // eslint-disable-next-line camelcase
   script: (urlAvatar, urlInputAvatar, user_id) => {
     console.log('modal editar imagen perfil cargado:', urlAvatar)
     document.querySelector('#urlImagenUsuario').value = urlAvatar
@@ -87,9 +88,10 @@ export const editarImagenPerfil = {
     // Boton enviar
     document.querySelector('#botonActualizarImagen').addEventListener('click', () => {
       document.querySelector(`#${urlInputAvatar}`).value = urlAvatar
-      
+
       // ***** AQUÍ HAY QUE ACTUALIZAR LA BASE DE DATOS CON LA IMAGEN
-      console.log('Actualizando base de datos: '+user_id);
+      // eslint-disable-next-line camelcase
+      console.log('Actualizando base de datos: ' + user_id)
       adminVista.script()
     })
   }
