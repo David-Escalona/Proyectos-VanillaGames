@@ -1,6 +1,6 @@
-import { proyectos, perfiles } from '../bd/datosPruebas'
-import { ls } from '../components/funciones'
-import { editarImagenPerfil } from '../components/editarImagenPerfil'
+import { proyectos, perfiles } from '../bd/datosPrueba'
+import { ls } from '../componentes/funciones'
+import { editarImagenPerfil } from '../componentes/editarImagenPerfil'
 
 export default {
   template: // html
@@ -478,12 +478,15 @@ export default {
         estado: document.querySelector('#estado_' + id).value,
         email: document.querySelector('#email_' + id).value
       }
+      // eslint-disable-next-line no-undef
       alert(`Enviando a la base de datos el objeto con id = ${usuario.user_id}`)
       console.log(`Enviando a la base de datos el objeto con id = ${usuario.user_id}`, proyectoEditado)
     }
     // Función para borrar registro de la base de datos
     function borrarUsuario (id) {
+      // eslint-disable-next-line no-undef
       alert('Borrando usuario ' + id)
     }
   }
+
 }

@@ -1,4 +1,4 @@
-import { User, Perfil } from '../bd/user'
+
 
 export default {
   template: // html

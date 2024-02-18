@@ -1,4 +1,4 @@
-import { proyectos } from '../bd/datosPruebas'
+import { proyectos } from '../bd/datosPrueba'
 
 export default {
   template: // html
@@ -6,8 +6,8 @@ export default {
   <div class="container">
   <h1 class="mt-5">Detalle del proyecto</h1>
   <div class="d-flex justify-content-end">
-    <button id="botonVolver" class="btn btn-outline-secondary mt-5 bi bi-arrow-bar-left">
-      Volver</button>
+    <bottom id="botonVolver" class="btn btn-outline-secondary mt-5 bi bi-arrow-bar-left">
+      Volver</bottom>
   </div>
   
   <div class="row mt-2">
@@ -46,6 +46,7 @@ export default {
     console.log(proyectos, id)
 
     // Simulamos la consulta a un proyecto por id filtrando de todos nuestros proyectos de prueba el que tiene el id que hemos recibido como parámetro
+    // eslint-disable-next-line eqeqeq
     const proyectoArray = proyectos.filter(p => p.id == id)
     const proyecto = proyectoArray[0]
 

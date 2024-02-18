@@ -1,5 +1,5 @@
-import { proyectos } from '../bd/datosPruebas'
-import { ls } from '../components/funciones'
+import { proyectos } from '../bd/datosPrueba'
+import { ls } from '../componentes/funciones'
 
 export default {
   template: // html
@@ -95,7 +95,7 @@ export default {
         </thead>
         <tbody id="tbodyProyectos">
           <!-- Aqui van los datos generados por la lógica -->
-          <p>No tienes proyectos</p>
+          
         </tbody>
       </table>
     </div>
@@ -103,7 +103,7 @@ export default {
     <!-- Panel de tarjetas -->
     <div id="tabTarjetas" class="d-xl-none row">
       <!-- Aqui van los datos generados por la lógica -->
-      <p>No tienes proyectos</p>
+     
     </div>
   </div>
 </div>
@@ -185,7 +185,7 @@ export default {
       // Si tenemos seleccionada la opción 'mis proyectos' filtramos los proyectos por user_id
       if (misProyectos) {
         proyectosFiltrados = datos.filter((proyecto) => proyecto.user_id === usuario.user_id)
-        // console.log(proyectos)
+        console.log(proyectos)
       }
       let tarjetasProyectos = ''
       // Iteramos para cada proyecto del array 'proyectosFiltrados'
@@ -274,7 +274,7 @@ export default {
 
     // Selección vista tarjetas
     document.querySelector('.vistaTarjetas').addEventListener('click', (boton) => {
-      // console.log('vistaTarjetas')
+      console.log('vistaTarjetas')
 
       // Pinta el boton de verde
       boton.target.classList.add('btn-success')
@@ -370,10 +370,14 @@ export default {
         // Capturamos el id de su dataset
         const id = boton.dataset.id
         if (boton.classList.contains('botonEditar')) {
+          // Si se trata de editar
+          console.log('Editar proyecto ' + id)
+
           // Cargamos la vista para editar proyecto pasandole como parámetro el id
           window.location = `#/proyectoEditar/${id}`
         } else if (boton.classList.contains('botonBorrar')) {
           // Si se trata de borrar
+          // eslint-disable-next-line no-undef
           alert('Borrar proyecto ' + id)
 
           // *** AQUÍ VA LA FUNCIÓN QUE BORRA DE LA BASE DE DATOS EL PROYECTO CORRESPONDIENTE AL ID ***
@@ -402,4 +406,3 @@ export default {
     }
   }
 }
-
