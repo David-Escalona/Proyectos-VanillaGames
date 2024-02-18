@@ -5,10 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "vite build --emptyOutDir",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist",
+    "test": "mocha"
   },
   "devDependencies": {
+    "chai": "^5.1.0",
+    "mocha": "^10.3.0",
     "sass": "^1.69.7",
     "vite": "^5.0.0"
   },
