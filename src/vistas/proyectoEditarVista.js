@@ -1,4 +1,4 @@
-import { proyectos } from '../bd/datosPrueba'
+import { proyectos } from '../bd/datosPruebas'
 
 export default {
   template: // html
@@ -6,8 +6,8 @@ export default {
   <div class="container">
   <h1 class="mt-5">Edición de proyecto</h1>
   <div class="d-flex justify-content-end">
-    <bottom id="botonVolver" class="btn btn-outline-secondary mt-5 bi bi-arrow-bar-left router-link">
-      Volver</bottom
+    <button id="botonVolver" class="btn btn-outline-secondary mt-5 bi bi-arrow-bar-left router-link">
+      Volver</button
     >
   </div>
   <form novalidate id="formularioEditarProyecto" action="" class="form">
@@ -161,7 +161,7 @@ export default {
         enviaDatos()
       }
     })
- 
+
     // Función para enviar datos a la base de datos
     function enviaDatos () {
       const proyectoEditado = {

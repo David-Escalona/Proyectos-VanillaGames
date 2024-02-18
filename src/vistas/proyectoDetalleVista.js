@@ -1,4 +1,4 @@
-import { proyectos } from '../bd/datosPrueba'
+import { proyectos } from '../bd/datosPruebas'
 
 export default {
   template: // html
@@ -6,8 +6,8 @@ export default {
   <div class="container">
   <h1 class="mt-5">Detalle del proyecto</h1>
   <div class="d-flex justify-content-end">
-    <bottom id="botonVolver" class="btn btn-outline-secondary mt-5 bi bi-arrow-bar-left">
-      Volver</bottom>
+    <button id="botonVolver" class="btn btn-outline-secondary mt-5 bi bi-arrow-bar-left">
+      Volver</button>
   </div>
   
   <div class="row mt-2">
@@ -48,7 +48,7 @@ export default {
     // Simulamos la consulta a un proyecto por id filtrando de todos nuestros proyectos de prueba el que tiene el id que hemos recibido como parámetro
     const proyectoArray = proyectos.filter(p => p.id == id)
     const proyecto = proyectoArray[0]
- 
+
     // Modificamos el formato de la fecha quedandonos solo con el yy-mm-dd
     const fecha = proyecto.created_at
     const fechaCorta = fecha.split('T')[0]
@@ -64,7 +64,7 @@ export default {
 
     // Añadimos el id en data-id al botón editar para que al detectar el click podamos llamar a la vista de edición pasandole el id en cuestión
     document.querySelector('#botonEditarDetalle').setAttribute('data-id', proyecto.id)
-    
+
     // Boton volver atras
     document.querySelector('#botonVolver').addEventListener('click', () => {
       window.history.back()
