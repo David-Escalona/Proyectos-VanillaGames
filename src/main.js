@@ -1,6 +1,5 @@
 import { header } from './componentes/header'
 import { footer } from './componentes/footer'
-import { proyectos } from './bd/datosPrueba'
 
 // Import all of Bootstrap's JS
 import 'bootstrap'
