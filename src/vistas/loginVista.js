@@ -1,65 +1,51 @@
-import { perfiles } from '../bd/datosPrueba'
+/* eslint-disable no-undef */
+import { User } from '../bd/user'
+import { Perfil } from '../bd/perfil'
 import { ls } from '../componentes/funciones'
 import { header } from '../componentes/header'
 
-import { User } from '../bd/user'
-import { Perfil } from '../bd/perfil'
 export default {
   template: // html
     `
-  <div class="container">
-  <h1 class="mt-5 text-center">Inicia sesión</h1>
-  <div class="m-5 mx-auto" style="max-width: 400px">
-    <!-- Formulario de inicio de sesión (login) -->
-    <form id="formularioLogin" novalidate action="" class="form border shadow-sm p-3">
-      <!-- Email -->
-      <label for="emailLogin" class="form-label">Email:</label>
-      <input id="emailLogin" name="email" value="velezsanchezbeatriz@fpllefia.com" required type="email" class="form-control" />
-      <div class="invalid-feedback">El formato del email no es correcto</div>
-      <!-- Contraseña -->
-      <label for="passLogin" class="form-label mt-3">Contraseña:</label>
-      <input value="aA123456789!" id="passLogin" name="password" required minlength="6" type="password" class="form-control" />
-      <div class="invalid-feedback">
-        La contraseña debe tener como mínimo 6 caracteres
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+          <div class="col-md-4">
+              <h1 class="text-center mb-5 fw-light">Iniciar Sesión</h1>
+              <div class="card rounded-0">
+                  <div class="card-body">
+                      <form id="formulario" action="proyecto.html">
+                          <div class="mb-3">
+                              <label for="email" class="form-label">Email:</label>
+                              <input id="email" name="email" value="ejemplo@email.com" required type="email" class="form-control" />
+                          </div>
+                          <div class="mb-3">
+                              <label for="password" class="form-label">Contraseña:</label>
+                              <input type="password" name="password" class="form-control rounded-0" id="password">
+                          </div>
+                          <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Recordar Sesión</label>
+                          </div>
+                          <div class="text-end mb-3">
+                            <a href="#">¿Has olvidado la contraseña?</a>
+                          </div>
+                          <button type="submit" class="btn btn-primary rounded-0 w-100">Iniciar Sesión</button>
+                      </form>
+                  </div>
+              </div>
+              <div class="mt-5 text-center border border-secondary bg-secondary py-2">
+                <a href="registro.html" class="link-underline link-underline-opacity-0 text-dark">¿Eres nuevo? Regístrate</a>
+              </div>
+          </div>
       </div>
-
-      <!-- Recordar contraseña -->
-      <div class="form-check mt-3">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          value=""
-          id="flexCheckChecked"
-          checked
-        />
-        <label class="form-check-label" for="flexCheckChecked">
-          Recordar sesión
-        </label>
-      </div>
-
-      <!-- Link a recordar contraseña -->
-      <a class="d-block text-end" href="#">¿Has olvidado tu contraseña?</a>
-
-      <!-- Botón Iniciar sesión -->
-      <input
-        type="submit"
-        class="btn btn-primary w-100 mt-3"
-        value="Iniciar sesión"
-      />
-    </form>
-
-    <a class="d-block mt-5 btn btn-secondary mx-auto" href="#"
-      >¿Eres nuevo? Regístrate</a
-    >
-  </div>
-</div>
-  `,
+    </div>
+    `,
   script: () => {
     console.log('vista login cargada')
     // Validación bootstrap
 
     // Capturamos el formulario en una variable
-    const formulario = document.querySelector('#formularioLogin')
+    const formulario = document.querySelector('#formulario')
     // Detectamos su evento submit (enviar)
     formulario.addEventListener('submit', (event) => {
       // Detenemos el evento enviar (submit)
@@ -69,13 +55,12 @@ export default {
       if (!formulario.checkValidity()) {
         // Y añadimos la clase 'was-validate' para que se muestren los mensajes
         formulario.classList.add('was-validated')
+        console.log('No valida')
       } else {
-        // Si valida enviamos los datos
         enviarDatos(formulario)
       }
     })
 
-    // Función para enviar datos a la bd
     async function enviarDatos (formulario) {
       try {
         // login
